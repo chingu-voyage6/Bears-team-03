@@ -1,0 +1,12 @@
+.reg-container {
+  display: flex;
+  height: 450px;
+  justify-content: center;
+  align-items: center;
+  margin-top: 150px;
+}
+
+.my-content{
+  padding-top: 10px;
+}
+

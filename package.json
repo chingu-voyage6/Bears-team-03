@@ -1,0 +1,38 @@
+{
+  "name": "expensesapp",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "mocha",
+    "start": "concurrently \"npm run server\" \"npm run client\"",
+    "server": "nodemon server.js",
+    "client": "node start-client.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bcrypt": "^2.0.1",
+    "body-parser": "^1.18.3",
+    "chai": "^4.1.2",
+    "concurrently": "^3.6.0",
+    "cors": "^2.8.4",
+    "dotenv": "^6.0.0",
+    "express": "^4.16.3",
+    "jwt-simple": "^0.5.1",
+    "lodash": "^4.17.10",
+    "mocha": "^5.2.0",
+    "moment": "^2.22.2",
+    "mongoose": "^5.1.4",
+    "mongoose-beautiful-unique-validation": "^7.1.1",
+    "mongoose-dateonly": "^1.0.4",
+    "mongoose-timestamp": "^0.6.0",
+    "morgan": "^1.9.0",
+    "passport": "^0.4.0",
+    "passport-jwt": "^4.0.0",
+    "passport-local": "^1.0.0",
+    "sinon": "^6.0.0",
+    "sinon-mongoose": "^2.1.1",
+    "victory": "^0.27.0"
+  }
+}

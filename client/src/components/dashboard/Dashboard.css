@@ -1,0 +1,23 @@
+#components-layout-demo-responsive .logo {
+  height: 100px;
+  background: rgba(255,255,255,.2);
+  margin: 16px;
+}
+
+.left-div{
+  max-width: 500px;
+  float: left;
+}
+
+.right-div{
+  
+  float: right;
+}
+
+.progressbar-progress{
+  margin-bottom: 5px;
+}
+
+#progress-red{
+  margin-left: 0px;
+}

@@ -1,0 +1,9 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat|Roboto');
+
+
+.intro{
+  font-family: 'Montserrat',sans-serif;
+  font-size: 100px;
+  line-height: 7px;
+  color:'#DEE3E7'
+}

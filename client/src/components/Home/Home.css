@@ -1,0 +1,44 @@
+.home-div {
+  display: flex;
+  height: 450px;
+  justify-content: center;
+  align-items: center;
+  margin-top: 50px
+  
+  
+}
+
+.home-view{
+  width:300px;
+  height:300px;
+}
+
+.form-view{
+  height: 240px;
+  margin-top: 100px;
+}
+
+
+
+.right-col{
+  margin-top: -70px;
+}
+
+.left-col{
+  margin-top: 100px;
+}
+
+.right-col .ant-layout  .ant-layout-header{
+  position:unset;
+}
+
+.login-container {
+  display: flex;
+  height: 500px;
+  justify-content: center;
+  align-items: center;
+  margin-top: 50px;
+  background: #99e1e5;
+  margin-bottom: 50px;
+  
+}
