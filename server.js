@@ -13,9 +13,7 @@ const Income = require('./routes/Income')
 // Initialize Server, Port and DB Setup
 
 
-if (process.env.NODE_ENV === 'production') {
-  app.use(express.static("./client/build"));
-}
+
 
 
 const Server = express()
@@ -32,6 +30,8 @@ mongoose.connect(process.env.MONGODB_URI)
         })
 
 
+
+
 // Middleware
 Server.use(morgan('tiny'))
 Server.use(cors()) // Cross site requests. Basically we can call the API from our react frontend on a different port
@@ -40,6 +40,10 @@ Server.use('/user', User)
 Server.use('/expense', Expense)
 Server.use('/income', Income)
 Server.use(Passport.initialize()) // Initialize the Passport middleware
+
+if (process.env.NODE_ENV === 'production') {
+  Server.use(express.static("./client/build"));
+}
 
 // Start Server
 Server.listen(Port, (err) => {
