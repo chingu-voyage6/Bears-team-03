@@ -17,6 +17,10 @@ const Income = require('./routes/Income')
 
 
 const Server = express()
+
+if (process.env.NODE_ENV === 'production') {
+  Server.use(express.static("./client/build"));
+}
 const Port = process.env.Port || 4000
 console.log("heroku port", Port)
 mongoose.connect(process.env.MONGODB_URI)
@@ -42,9 +46,9 @@ Server.use('/expense', Expense)
 Server.use('/income', Income)
 Server.use(Passport.initialize()) // Initialize the Passport middleware
 
-if (process.env.NODE_ENV === 'production') {
-  Server.use(express.static("./client/build"));
-}
+// if (process.env.NODE_ENV === 'production') {
+//   Server.use(express.static("./client/build"));
+// }
 
 // Start Server
 Server.listen(Port, (err) => {
