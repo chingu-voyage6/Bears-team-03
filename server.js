@@ -17,7 +17,7 @@ const Income = require('./routes/Income')
 
 
 const Server = express()
-const Port = process.env.port || 4000
+const Port = process.env.Port || 4000
 mongoose.connect(process.env.MONGODB_URI)
         .then(response => {
           console.log(`Connected to DB: ${process.env.MONGODB_URI}`)
