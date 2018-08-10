@@ -1,0 +1,9 @@
+.profile-container {
+  display: flex;
+  height: 450px;
+  justify-content: center;
+  align-items: center;
+  margin-top: 100px
+  
+  
+}

@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from "react-router-dom";
 import './Landing.css'
 import Background from '../../images/phone.svg'
-import { Layout, Button } from 'antd';
+import { Layout, Button, Row, Col } from 'antd';
 import PublicHeader from '../Header/PublicHeader';
 
 
@@ -11,31 +11,41 @@ const {Content, Footer} = Layout;
 class LandinPage extends React.Component{
   render(){
     const divStyle = {
-       background: '#fff', 
-       padding: 0, 
-       minHeight: 700,
+      background: '#fff', 
+      minHeight: 800,
       backgroundImage : `url(${Background})`,
       backgroundRepeat: `no-repeat`,
       backgroundSize: 'cover',
-       //backgroundPosition: 'center'
-    //  backgroundAttachment:`fixed`,
-      margin:-15
-    }
-    return (
-      <Layout>
-      <PublicHeader />
+      // backgroundAttachment: 'fixed',
+      margin: -20,
       
-        {/* <Content > */}
+    }
+    // style={{top:350, left:110, backgroundColor:'#001529', borderColor:'#001529'}}
+    return (
+      <div>
+       <PublicHeader style={{height: 100, marginBottom:0}} />
+      <Layout>
+      
           <div style={divStyle}>
-             <Button type="primary" style={{top:350, left:110, backgroundColor:'#001529', borderColor:'#001529'}}>
-             <Link to={`/home`}>Create Expense</Link></Button>
+            <Row >
+                <Col span={4} col-offset-4>
+                <div className="expense-button">
+                <Button type="primary" style={{ backgroundColor:'#001529', borderColor:'#001529'}}>
+                   <Link to={`/home`}>Create Expense</Link></Button> </div>
+                </Col>
+                
+            </Row>
+             {/* <Button type="primary" style={{ backgroundColor:'#001529', borderColor:'#001529'}}>
+             <Link to={`/home`}>Create Expense</Link></Button> */}
           </div>
-        {/* </Content> */}
+ 
      
-      <Footer style={{ textAlign: 'center', bottom:0}}>
-            ChinguVoyage Bears3 Design ©2016 Created with by Ant UED
-      </Footer>
+      
       </Layout>
+      <Footer style={{ textAlign: 'center', bottom:0, right:0, left:0, height: 100}}>
+      ChinguVoyage Bears3 Design ©2016 Created with by Ant UED
+       </Footer>
+      </div>
     )
   }
 }
