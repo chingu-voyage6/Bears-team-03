@@ -11,5 +11,5 @@ if(env === 'development'){
     process.env.MONGODB_URI = 'mongodb://localhost:27017/ExpenseAppTest'
 }else if(env == 'production'){
   process.env.JWT_SECRET = 'cookies';
-  process.env.MONGODB_URI = 'mongodb://<dbuser>:<dbpassword>@ds219432.mlab.com:19432/expenseapp'
+  process.env.MONGODB_URI = 'mongodb://root:pooc1234@ds219432.mlab.com:19432/expenseapp'
 }
