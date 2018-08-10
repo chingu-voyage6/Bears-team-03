@@ -1,4 +1,3 @@
-require('dotenv').config()
 require('./config')
 const express = require('express')
 const mongoose = require('mongoose')
@@ -15,7 +14,7 @@ const Income = require('./routes/Income')
 
 
 if (process.env.NODE_ENV === 'production') {
-  app.use(express.static('client/build'));
+  app.use(express.static("./client/build"));
 }
 
 
