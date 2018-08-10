@@ -1,4 +1,5 @@
 require('dotenv').config()
+require('./config')
 const express = require('express')
 const mongoose = require('mongoose')
 const bodyParser = require('body-parser')
@@ -13,11 +14,16 @@ const Income = require('./routes/Income')
 // Initialize Server, Port and DB Setup
 
 
+if (process.env.NODE_ENV === 'production') {
+  app.use(express.static('client/build'));
+}
+
+
 const Server = express()
 const Port = process.env.port || 4000
-mongoose.connect(process.env.DB_HOST)
+mongoose.connect(process.env.MONGODB_URI)
         .then(response => {
-          console.log(`Connected to DB: ${process.env.DB_HOST}`)
+          console.log(`Connected to DB: ${process.env.MONGODB_URI}`)
         })
         .catch(e => {
           console.log({
@@ -25,13 +31,7 @@ mongoose.connect(process.env.DB_HOST)
             error: e.message
           })
         })
-//mongoose.PromiseProvider = global.Promise;
-// mongoose.connection.on('connected', () => {
-//   console.log(`Connected to DB: ${process.env.DB_HOST}`)
-// })
-// mongoose.connection.on('error', () => {
-//   console.log('Failed to connect to DB') 
-// })
+
 
 // Middleware
 Server.use(morgan('tiny'))
