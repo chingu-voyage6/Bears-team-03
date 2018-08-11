@@ -44,7 +44,7 @@ Server.use('/income', Income)
 Server.use(Passport.initialize()) // Initialize the Passport middleware
 
 if (process.env.NODE_ENV === 'production') {
-  Server.use(express.static("./client/build"));
+  Server.use(express.static("client/build"));
 }
 
 // Start Server
