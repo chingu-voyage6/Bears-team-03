@@ -48,7 +48,7 @@ if (process.env.NODE_ENV === 'production') {
 }
 
 // Start Server
-Server.listen(Port, (err) => {
+Server.listen(Port,'0.0.0.0', (err) => {
   if(err) {
     console.log('Server Error', err)
   }
