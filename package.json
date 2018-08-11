@@ -10,7 +10,10 @@
     "server": "node server.js",
     "client": "node start-client.js"
   },
-  "author": "",
+  "engines": {
+    "node":"8.11.3"
+  },
+  "author": "jide olaniyan",
   "license": "ISC",
   "dependencies": {
     "bcrypt": "^2.0.1",
