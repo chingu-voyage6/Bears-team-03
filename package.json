@@ -4,14 +4,14 @@
   "description": "",
   "main": "server.js",
   "scripts": {
-    "test": "mocha",
-    "dev": "concurrently \"npm run server\" \"npm run client\"",
+    "client": "cd client && yarn start",
+    "server": "nodemon server.js",
+    "dev": "concurrently --kill-others-on-fail \"yarn server\" \"yarn client\"",
     "start": "node server.js",
-    "server": "node server.js",
-    "client": "node start-client.js"
+    "heroku-postbuild": "cd client && npm install && npm install --only=dev --no-shrinkwrap && npm run build"
   },
   "engines": {
-    "node":"8.11.3"
+    "node": "8.11.3"
   },
   "author": "jide olaniyan",
   "license": "ISC",
@@ -35,8 +35,12 @@
     "passport": "^0.4.0",
     "passport-jwt": "^4.0.0",
     "passport-local": "^1.0.0",
+    "path": "^0.12.7",
     "sinon": "^6.0.0",
     "sinon-mongoose": "^2.1.1",
     "victory": "^0.27.0"
+  },
+  "devDependencies": {
+    "babel-register": "^6.26.0"
   }
 }

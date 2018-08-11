@@ -5,7 +5,7 @@ const bodyParser = require('body-parser')
 const cors = require('cors')
 const Passport = require('./Services/Passport')
 const morgan = require('morgan')
-
+const path = require('path')
 const User = require('./routes/User')
 const Expense = require('./routes/Expense')
 const Income = require('./routes/Income')
@@ -44,7 +44,12 @@ Server.use('/income', Income)
 Server.use(Passport.initialize()) // Initialize the Passport middleware
 
 if (process.env.NODE_ENV === 'production') {
-  Server.use(express.static("client/build"));
+  // Serve any static files
+  app.use(express.static(path.join(__dirname, 'client/build')));
+  // Handle React routing, return all requests to React app
+  app.get('*', function(req, res) {
+    res.sendFile(path.join(__dirname, 'client/build', 'index.html'));
+  });
 }
 
 // Start Server
