@@ -30,7 +30,7 @@ export function signUp( {
             type: actionType.SIGN_UP
           })
           localStorage.setItem('token', response.data.token)
-          history.pushState('/home')
+          history.push('/home')
         }
       }).catch(error => {
         dispatch({

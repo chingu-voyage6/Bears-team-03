@@ -127,13 +127,13 @@ class HomeForm extends React.Component {
             <Col span={12}>
               <img src={mainback} alt="my-home-icon" className="home-view" />
             </Col>
-            {this.state.showError === true ? (
+            {/* {this.state.showError === true ? (
               <Col>
                 <p>{this.props.error}</p>
               </Col>
             ) : (
               ""
-            )}
+            )} */}
           </Row>
         </div>
         <Footer className="foot" style={{ textAlign: "center" }}>
