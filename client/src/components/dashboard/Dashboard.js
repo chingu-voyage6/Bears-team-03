@@ -47,7 +47,9 @@ class Dashboard extends React.Component {
                 background: "#fff",
                 padding: 24,
                 minHeight: 380,
-                overflow: "hidden"
+                overflow: "hidden",
+                marginBottom: "50px",
+                boxShadow: "1px 1px 11px rgba(0, 0, 0, 0.198)"
               }}
             >
               <Row>
