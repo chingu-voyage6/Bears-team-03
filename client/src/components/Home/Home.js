@@ -21,6 +21,22 @@ const mainback = require("../../images/Cutting-Expenses.gif");
 const { Content, Footer, Header } = Layout;
 
 class HomeForm extends React.Component {
+  constructor(props){
+    super(props);
+    this.state = {
+      showError: false,
+    }
+  }
+  componentWillReceiveProps(nextProps){
+    if(nextProps !== this.props){
+      if(nextProps.error !==  undefined || typeof nextProps.error === 'string'){
+         this.setState({
+           showError:  true,
+         })
+      }
+    }
+  }
+
   handleSubmit = e => {
     e.preventDefault();
     this.props.form.validateFields((err, values) => {
@@ -37,7 +53,6 @@ class HomeForm extends React.Component {
       <div className="home-container">
           <Header style={{ marginBottom: "unset" }} className="head"/>
           <div className="login-container">
-            {/* <div style={{ padding: 0, minHeight: 380 }}> */}
               <Row className="login-row">
                 <Col span={12}>
                   <Card title="Login" style={{ width: 300 }}>
@@ -113,8 +128,16 @@ class HomeForm extends React.Component {
                     className="home-view"
                   />
                 </Col>
+                {
+                  this.state.showError === true ? 
+                  (
+                    <Col>
+                      <p>{ this.props.error }</p>
+                    </Col>
+                  ) : ''
+                }
               </Row>
-            {/* </div> */}
+           
           </div>
           <Footer className="foot" style={{ textAlign: "center" }}>
             ChinguVoyage Bears3 Design ©2016 Created with by Ant UED
