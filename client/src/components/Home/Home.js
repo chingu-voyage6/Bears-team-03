@@ -9,14 +9,12 @@ import {
   Icon,
   Input,
   Button,
-  Checkbox
+  Checkbox,
 } from "antd";
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
 import * as userActions from "../../actions/User/UserActions";
 import "./Home.css";
-import PublicHeader from "./../Header/PublicHeader";
-// import RenderErrors from './../../hoc/RenderErros/RenderErrors';
 
 const FormItem = Form.Item;
 const mainback = require("../../images/Cutting-Expenses.gif");
@@ -36,12 +34,11 @@ class HomeForm extends React.Component {
   render() {
     const { getFieldDecorator } = this.props.form;
     return (
-      <div>
-        <Layout>
-          <PublicHeader />
-          <Content className="login-container">
-            <div style={{ background: "#fff", padding: 24, minHeight: 380 }}>
-              <Row>
+      <div className="home-container">
+          <Header style={{ marginBottom: "unset" }} className="head"/>
+          <div className="login-container">
+            {/* <div style={{ padding: 0, minHeight: 380 }}> */}
+              <Row className="login-row">
                 <Col span={12}>
                   <Card title="Login" style={{ width: 300 }}>
                     <Form
@@ -104,7 +101,6 @@ class HomeForm extends React.Component {
                         >
                           Log in
                         </Button>
-                        {/* Or <a href="">register now!</a> */}
                         Or <Link to={`/register`}>Register</Link>
                       </FormItem>
                     </Form>
@@ -118,12 +114,11 @@ class HomeForm extends React.Component {
                   />
                 </Col>
               </Row>
-            </div>
-          </Content>
-          <Footer style={{ textAlign: "center" }}>
+            {/* </div> */}
+          </div>
+          <Footer className="foot" style={{ textAlign: "center" }}>
             ChinguVoyage Bears3 Design ©2016 Created with by Ant UED
           </Footer>
-        </Layout>
       </div>
     );
   }

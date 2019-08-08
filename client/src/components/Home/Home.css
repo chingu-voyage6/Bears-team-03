@@ -10,7 +10,8 @@
 
 .home-view{
   width:300px;
-  height:300px;
+  height:373px;
+  /* border: 3px red solid; */
 }
 
 .form-view{
@@ -32,13 +33,26 @@
   position:unset;
 }
 
+.home-container {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: unset;
+  height: 100vh;
+}
+
 .login-container {
   display: flex;
-  height: 500px;
   justify-content: center;
   align-items: center;
-  margin-top: 50px;
+  margin-top: unset;
   background: #99e1e5;
-  margin-bottom: 50px;
-  
+  flex-basis: 80%;
+}
+
+.head{
+  flex-basis: 10%;
+}
+
+.foot {
+  flex-basis: 10%;
 }
