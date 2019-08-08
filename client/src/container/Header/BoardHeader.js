@@ -4,13 +4,11 @@ import "./BoardHeader.css";
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
 import * as userActions from "../../actions/User/UserActions";
-import { Layout, Menu, Icon, DatePicker } from "antd";
+import { Menu, Icon, DatePicker } from "antd";
 import ExpenseModalButton from "../Expense/ExpenseModal";
 import moment from "moment";
 
-const { Header } = Layout;
 const SubMenu = Menu.SubMenu;
-const { Content, Footer } = Layout;
 const dateFormat = "YYYY/MM/DD";
 
 class UserBoardHeader extends React.Component {
@@ -36,7 +34,7 @@ class UserBoardHeader extends React.Component {
           theme="dark"
           mode="horizontal"
           defaultSelectedKeys={["2"]}
-          style={{ position: "fixed", zIndex: 1, width: "100%", border: "3px green solid" }}
+          style={{ position: "fixed", zIndex: 1, width: "100%" }}
         >
           <Menu.Item key="1">
             <span>Home</span>
