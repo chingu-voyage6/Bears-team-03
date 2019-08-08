@@ -70,7 +70,7 @@ class UserBoardHeader extends React.Component{
               <Menu.Item key="13">Earnings</Menu.Item>
             </SubMenu>
             <Menu.Item key="13" style={{ float: 'right' }}><Link to={`/`}><Icon type="poweroff" />Logout</Link></Menu.Item>
-            <SubMenu key="sub4" class="to-profile" style={{ float: 'right' }} title={<Link to={`/profile`}><span style={{ color: 'white' }}><Icon type="user" /><span>{this.props.boardUser}</span></span></Link>}></SubMenu>
+            <SubMenu key="sub4" className="to-profile" style={{ float: 'right' }} title={<Link to={`/profile`}><span style={{ color: 'white' }}><Icon type="user" /><span>{this.props.boardUser}</span></span></Link>}></SubMenu>
             <SubMenu key="sub5"  title={<span><span>Timeline</span></span>}></SubMenu>
             <SubMenu key="sub6" 
             style={{ float: 'right' }} 

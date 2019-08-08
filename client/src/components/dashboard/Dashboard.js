@@ -23,7 +23,6 @@ class Dashboard extends React.Component {
 
   componentWillMount() {
     this.props.actions.userDashboard()
-
   }
 
 
@@ -49,23 +48,21 @@ getUserName(){
             <br />
             <br />
             <div style={{ background: '#fff', padding: 24, minHeight: 380, overflow:'hidden' }}>
-
              <Row>
                <Col span={12}> 
-               <GraphDisplay menu={this.props.graph} />
+               {/* <GraphDisplay menu={this.props.graph} /> */}
                </Col>
                <Col span={12}  style={{ marginTop: '-20px' }}>
                <Divider orientation="left" > <Day />
                </Divider>  
-                <Card style={{ padding: '3px' }}>
+                {/* <Card style={{ padding: '3px' }}>
                  <MonthlyExpenseAccumulator  />
-                </Card>
+                </Card> */}
                 <Card>
                   <TimeLiner />
                 </Card>
                 </Col>
              </ Row>
-              
             </div>
           </Content>
           

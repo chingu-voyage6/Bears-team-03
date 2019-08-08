@@ -1,4 +1,4 @@
-require('../config')
+const { setConfig } = require('../config/config')
 const Passport = require('passport')
 const JwtStrategy = require('passport-jwt').Strategy
 const ExtractJwt = require('passport-jwt').ExtractJwt
@@ -6,6 +6,8 @@ const LocalStrategy = require('passport-local').Strategy
 const bcrypt = require('bcrypt')
 
 const User = require('../models/User')
+
+const config = setConfig();
 
 // Local Strategy
 const opts = { usernameField: 'userName' }
@@ -37,7 +39,7 @@ const localLogin = new LocalStrategy(opts, (userName, password, done) => {
 // JsonWebToken Options
 const jwtOptions = {
   jwtFromRequest: ExtractJwt.fromAuthHeaderAsBearerToken(),
-  secretOrKey: process.env.JWT_SECRET
+  secretOrKey: config.jwtSecret,
 }
 
 // Create JWT Strategy

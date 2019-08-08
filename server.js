@@ -1,4 +1,4 @@
-require('./config')
+const { setConfig } = require('./config/config')
 const express = require('express')
 const mongoose = require('mongoose')
 const bodyParser = require('body-parser')
@@ -13,16 +13,14 @@ const Income = require('./routes/Income')
 // Initialize Server, Port and DB Setup
 
 
-
-
-
+const config = setConfig()
 const Server = express()
 
-const Port = process.env.PORT || 4000
+const Port = config.port
 console.log("heroku port", Port)
-mongoose.connect(process.env.MONGODB_URI)
+mongoose.connect(config.database, { useNewUrlParser: true })
         .then(response => {
-          console.log(`Connected to DB: ${process.env.MONGODB_URI}`)
+          console.log(`Connected to DB: ${config.database}`)
         })
         .catch(e => {
           console.log({
