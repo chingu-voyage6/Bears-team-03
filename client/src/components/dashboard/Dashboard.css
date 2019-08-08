@@ -21,3 +21,12 @@
 #progress-red{
   margin-left: 0px;
 }
+
+.dashboard-container{
+  display: flex;
+  flex-direction: column;
+  border: 3px red solid;
+  height: 100vh;
+}
+
+
