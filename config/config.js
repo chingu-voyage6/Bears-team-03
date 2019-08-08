@@ -13,6 +13,7 @@ const setConfig = () => {
       };
     case "production":
       return {
+        port: process.env.PORT || 4000,
         database: process.env.MONGODB_URI,
         jwtSecret: process.env.JWT_SECRET
       }
