@@ -12,10 +12,6 @@ const SubMenu = Menu.SubMenu;
 const dateFormat = "YYYY/MM/DD";
 
 class UserBoardHeader extends React.Component {
-  constructor(props) {
-    super(props);
-  }
-
   lineClick(e) {
     this.props.actions.dashBoardHeader("line");
   }

@@ -2,16 +2,12 @@ import React from "react";
 import { Link } from "react-router-dom";
 import "./Landing.css";
 import Background from "../../images/phone.svg";
-import { Layout, Button, Row, Col } from "antd";
-import PublicHeader from "../Header/PublicHeader";
+import { Layout} from "antd";
 
-const { Content, Footer, Header } = Layout;
 
 class LandinPage extends React.Component {
   render() {
     const divStyle = {
-      // display: "flex",
-      // background: "#fff",
       minHeight: "100vh",
       width: "100vw",
       backgroundImage: `url(${Background})`,

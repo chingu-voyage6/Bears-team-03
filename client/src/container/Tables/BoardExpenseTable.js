@@ -45,7 +45,7 @@ class MonthlyExpenseAccumulator extends React.Component {
   }
 
   getDataArray() {
-    const data = [{}];
+    let data = [{}];
     if (
       this.props.monthlyAccumExpenses === undefined ||
       this.props.monthlyAccumExpenses === null
@@ -58,7 +58,7 @@ class MonthlyExpenseAccumulator extends React.Component {
       this.state.data;
     } else {
       const key = 1;
-      const data = [
+       data = [
         {
           key: key,
           food:

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './Login.css'
 import 'antd/dist/antd.css';
-import { Form, Icon, Input, Button, Checkbox,Card, Layout } from 'antd';
+import { Card, Layout } from 'antd';
 import LoginForm from './LoginForm';
 import PublicHeader from './../Header/PublicHeader';
 

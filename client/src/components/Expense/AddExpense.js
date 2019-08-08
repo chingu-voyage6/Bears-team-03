@@ -4,7 +4,7 @@ import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 import * as userActions from '../../actions/User/UserActions'
 
-import { Layout,Card ,Form, Button, Input, Select, Row, Col } from 'antd';
+import { Layout,Card ,Form, Button, Input, Select } from 'antd';
 import LinkHeader from '../../container/Header/LinkHeader';
 const {Content} = Layout;
 const FormItem = Form.Item;

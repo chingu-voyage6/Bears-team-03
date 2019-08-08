@@ -2,7 +2,7 @@ import React from "react";
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
 import * as userActions from "../../actions/User/UserActions";
-import { PieChart, Pie, Legend } from "recharts";
+import { PieChart, Pie } from "recharts";
 
 class PieGraph extends React.Component {
   constructor(props){

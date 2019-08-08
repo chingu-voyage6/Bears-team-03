@@ -15,10 +15,6 @@ import MonthlyExpenseAccumulator from "../../container/Tables/BoardExpenseTable"
 const { Content, Footer } = Layout;
 
 class Dashboard extends React.Component {
-  constructor(props) {
-    super(props);
-  }
-
   componentWillMount() {
     this.props.actions.userDashboard();
   }
