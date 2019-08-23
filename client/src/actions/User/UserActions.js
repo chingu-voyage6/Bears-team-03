@@ -1,8 +1,9 @@
 import axios from 'axios';
 import * as actionType from '../actionTypes'
-import { USER_URL, EXPENSE_URL } from '../../urls/URL';
+import { returnUrls } from '../../urls/URL';
 import history from '../../hoc/History/History'
 
+const url = returnUrls();
 
 export function signUp( {
   firstName,
@@ -12,7 +13,7 @@ export function signUp( {
   password
 }){
     return dispatch => {
-      axios.post(`${USER_URL}/create`, {
+      axios.post(`${url.USER_URL}/create`, {
         firstName,
         lastName,
         userName,
@@ -48,7 +49,7 @@ export function userDashboard(){
     
     let token = localStorage.getItem('token')
    
-    axios.get(`${USER_URL}/dashboard`, {
+    axios.get(`${url.USER_URL}/dashboard`, {
       headers: {
         Authorization: `Bearer ${token}`
       }
@@ -78,7 +79,7 @@ export function dashBoardHeader(menuGraph){
 export function signIn({userName,password}){
  
   return dispatch => {
-    axios.post(`${USER_URL}/login`, {
+    axios.post(`${url.USER_URL}/login`, {
       userName,
       password
     } )
@@ -120,7 +121,7 @@ export function signOut(){
 export function updateUser({firstName, lastName, userName, email, password}){
   return dispatch => {
     let token = localStorage.getItem('token')
-    axios.post(`${USER_URL}/update`, {
+    axios.post(`${url.USER_URL}/update`, {
        firstName, lastName, userName, email, password
        },{ headers: { Authorization: `Bearer ${token}` } }).then(response => {
       if(response.data.success === false){
@@ -151,7 +152,7 @@ export function addExpense({
 }){
     return dispatch => {
       let token = localStorage.getItem('token')
-      axios.post(`${EXPENSE_URL}/create`,{
+      axios.post(`${url.EXPENSE_URL}/create`,{
         name,
         paidWith,
         amount,
@@ -177,7 +178,7 @@ export function addExpense({
 export function listMonthExpense(){
   return dispatch => {
     let token = localStorage.getItem('token')
-    axios.get(`${EXPENSE_URL}/list`,
+    axios.get(`${url.EXPENSE_URL}/list`,
     {headers: {Authorization: `Bearer ${token}`}})
     .then(response => {
       dispatch({

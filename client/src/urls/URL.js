@@ -1,19 +1,25 @@
+import dotenv from 'dotenv';
 
-let USER_URL;
-let EXPENSE_URL;
+dotenv.config();
 
-if ( process.env.NODE_ENV === 'production' ){
-    console.log("production figures ", process.env.USER_URL, process.env.USER_URL)
-    USER_URL = process.env.USER_URL 
-    EXPENSE_URL = process.env.EXPENSE_URL 
-}else{
-    console.log("not production")
-    USER_URL = 'http://localhost:4000/user'
-    EXPENSE_URL = 'http://localhost:4000/expense'
+const env = process.env.NODE_ENV
+
+const envs = {
+    'production': {
+        USER_URL: process.env.USER_URL,
+        EXPENSE_URL: process.env.EXPENSE_URL,
+    },
+    'others': {
+        USER_URL: 'http://localhost:4000/user',
+        EXPENSE_URL: 'http://localhost:4000/expense'
+    }
 }
 
 
-module.exports = {
-    USER_URL,
-    EXPENSE_URL,
+export function returnUrls(){
+      if (env !== 'production') {
+        return envs.others
+      }else{
+        return envs.production
+      }  
 }
