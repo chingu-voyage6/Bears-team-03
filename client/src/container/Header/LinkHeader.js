@@ -12,7 +12,6 @@ class LinkHeader extends React.Component{
   render(){
     return (
       <Header style={{ position: 'fixed', zIndex: 1, width: '100%' }}>
-            {/* <div className="logo" /> */}
             <Menu
              theme="dark"
              mode="horizontal"

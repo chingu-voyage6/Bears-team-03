@@ -19,7 +19,6 @@ class RegistrationForm extends React.Component {
     e.preventDefault();
     this.props.form.validateFieldsAndScroll((err, values) => {
       if (!err) {
-        console.log("Received values of form: ", values);
         this.props.actions.signUp(values);
       }
     });
@@ -175,7 +174,7 @@ class RegistrationForm extends React.Component {
 
 const Register = Form.create()(RegistrationForm);
 
-//export default Register
+
 
 const mapStatetToProps = state => {
   return { error: state.user.error };

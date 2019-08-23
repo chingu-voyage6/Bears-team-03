@@ -24,7 +24,6 @@ class ExpenseModalButton extends React.Component {
         return;
       }
       this.props.actions.addExpense(values)
-      console.log('Received values of form: ', values);
       form.resetFields();
       this.props.actions.showExpenseModal(false)
     });
@@ -51,7 +50,6 @@ class ExpenseModalButton extends React.Component {
 
 
 const mapStatetToProps = (state) => {
-  console.log('expense state user', state)
   return { 
     error: state.user.error,
     user: state.user.user,

@@ -4,7 +4,7 @@ import { bindActionCreators } from 'redux'
 import './LoginForm.css';
 import * as userActions from '../../actions/User/UserActions';
 import { Form, Icon, Input, Button, Checkbox } from 'antd';
-//import RenderErrors from '../../hoc/RenderErros/RenderErrors';
+
 
 
 const FormItem = Form.Item;
@@ -14,7 +14,6 @@ class NormalLoginForm extends React.Component {
     e.preventDefault();
     this.props.form.validateFields((err, values) => {
       if (!err) {
-        console.log('Received values of form: ', values);
         this.props.actions.signIn(values)
       }
     });

@@ -12,9 +12,7 @@ const ExpenseModalForm = Form.create()(
     handleSubmit = (e) => {
       e.preventDefault();
       this.props.form.validateFieldsAndScroll((err, values) => {
-           console.log('An erro occured at add expense')
         if (!err) {
-          console.log('Received values of form: ', values);
           this.props.actions.addExpense(values)
         }
       });

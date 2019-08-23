@@ -1,9 +1,6 @@
 import React  from 'react';
-// import { Link } from 'react-router-dom'
-import './Profile.css'
-// import { connect } from 'react-redux'
-// import { bindActionCreators } from 'redux'
-// import * as userActions from '../../actions/User/UserActions'
+import './Profile.css';
+
 import { Layout, Card} from 'antd';
 import LinkHeader from './../Header/LinkHeader';
 

@@ -130,7 +130,6 @@ class UserBoardHeader extends React.Component {
 }
 
 const mapStatetToProps = state => {
-  console.log(" state at header", state);
   return { user: state.user.user };
 };
 
