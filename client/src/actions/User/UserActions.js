@@ -1,9 +1,9 @@
 import axios from 'axios';
 import * as actionType from '../actionTypes'
-// import * as url from '../../urls/URL';
+import * as ur from '../../urls/URL';
 import history from '../../hoc/History/History'
 
-// ${url.USER_URL}
+const url = returnUrls();
 
 export function signUp( {
   firstName,
@@ -13,7 +13,7 @@ export function signUp( {
   password
 }){
     return dispatch => {
-      axios.post(`/create`, {
+      axios.post(`/user/create`, {
         firstName,
         lastName,
         userName,
@@ -49,7 +49,7 @@ export function userDashboard(){
     
     let token = localStorage.getItem('token')
    
-    axios.get(`/dashboard`, {
+    axios.get(`/user/dashboard`, {
       headers: {
         Authorization: `Bearer ${token}`
       }
@@ -79,7 +79,7 @@ export function dashBoardHeader(menuGraph){
 export function signIn({userName,password}){
  
   return dispatch => {
-    axios.post(`/login`, {
+    axios.post(`/user/login`, {
       userName,
       password
     } )
@@ -121,7 +121,7 @@ export function signOut(){
 export function updateUser({firstName, lastName, userName, email, password}){
   return dispatch => {
     let token = localStorage.getItem('token')
-    axios.post(`/update`, {
+    axios.post(`/user/update`, {
        firstName, lastName, userName, email, password
        },{ headers: { Authorization: `Bearer ${token}` } }).then(response => {
       if(response.data.success === false){
@@ -152,7 +152,7 @@ export function addExpense({
 }){
     return dispatch => {
       let token = localStorage.getItem('token')
-      axios.post(`/create`,{
+      axios.post(`/expense/create`,{
         name,
         paidWith,
         amount,
@@ -178,7 +178,7 @@ export function addExpense({
 export function listMonthExpense(){
   return dispatch => {
     let token = localStorage.getItem('token')
-    axios.get(`/list`,
+    axios.get(`/expense/list`,
     {headers: {Authorization: `Bearer ${token}`}})
     .then(response => {
       dispatch({
