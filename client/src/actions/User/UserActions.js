@@ -1,9 +1,7 @@
 import axios from 'axios';
 import * as actionType from '../actionTypes'
-import * as ur from '../../urls/URL';
 import history from '../../hoc/History/History'
 
-const url = returnUrls();
 
 export function signUp( {
   firstName,
