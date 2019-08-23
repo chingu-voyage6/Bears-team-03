@@ -55,7 +55,7 @@ class MonthlyExpenseAccumulator extends React.Component {
       typeof this.props.monthlyAccumExpenses === "object" &&
       Object.keys(this.props.monthlyAccumExpenses).length === 0
     ) {
-      this.state.data;
+      return this.state.data;
     } else {
       const key = 1;
        data = [

@@ -19,9 +19,6 @@ class LandinPage extends React.Component {
       opacity: "0.5"
     };
     
-   const headerStyle = {
-
-   }
 
     return (
       <div>
