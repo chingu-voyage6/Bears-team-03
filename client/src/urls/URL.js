@@ -2,7 +2,7 @@
 let USER_URL;
 let EXPENSE_URL;
 
-if (process.env === 'production' ){
+if ( process.env.NODE_ENV === 'production' ){
     console.log("production figures ", process.env.USER_URL, process.env.USER_URL)
     USER_URL = process.env.USER_URL 
     EXPENSE_URL = process.env.EXPENSE_URL 
