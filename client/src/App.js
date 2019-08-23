@@ -21,7 +21,6 @@ class App extends Component {
           <AuxComp>
          <Router history={history}>
          <Switch>
-           {/* <Route exact path='/home' component={Home} /> */}
            <Route  path='/dashboard' component={Auth(Dashboard)} />
            <Route  exact path='/' component={LandinPage} />
            <Route  path='/login' component={Login} />

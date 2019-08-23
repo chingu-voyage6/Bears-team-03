@@ -26,7 +26,6 @@ class GraphDisplay extends React.Component {
 }
 
 const mapStatetToProps = state => {
-  console.log("state at graph", state.user);
   return {
     monthlyAccumExpenses: state.user.monthAccumulatedExpenses
   };

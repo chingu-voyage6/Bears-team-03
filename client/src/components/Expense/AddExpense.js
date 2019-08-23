@@ -17,25 +17,22 @@ class Expense extends React.Component {
   handleSubmit = (e) => {
     e.preventDefault();
     this.props.form.validateFieldsAndScroll((err, values) => {
-         console.log('An erro occured at add expense')
       if (!err) {
-        console.log('Received values of form: ', values);
         this.props.actions.addExpense(values)
       }
-    //  this.props.error = err;
     });
   }
 
    handleChange(value) {
-    console.log(`selected ${value}`);
+    // console.log(`selected ${value}`);
   }
   
   handleBlur() {
-    console.log('blur');
+    // console.log('blur');
   }
   
   handleFocus() {
-    console.log('focus');
+    // console.log('focus');
   }
    
   render() {
@@ -57,7 +54,6 @@ class Expense extends React.Component {
         <LinkHeader boardUser={this.props.user === undefined ? '': this.props.user.userName}/>
         <Content className="reg-container" >
         <div style={{ background: '#fff', padding: 24, minHeight: 380 }}>
-        {/* style={{ width: 450 }} */}
         <Card title="Create Expense"  style={{ width: 450 }} >
         <Form layout="vertical" onSubmit={this.handleSubmit} >
         
@@ -78,7 +74,6 @@ class Expense extends React.Component {
               {getFieldDecorator('paidWith', {
                 rules: [{ required: true, message: 'Please input mode of payment(Cash or Card)!' }],
               })(
-                // <Input />
                 <Select
                 
                 showSearch
@@ -100,7 +95,6 @@ class Expense extends React.Component {
               {getFieldDecorator('category', {
                 rules: [{ required: true, message: 'Please input mode of payment(Cash or Card)!' }],
               })(
-                // <Input />
                 <Select
                 
                 showSearch
@@ -135,10 +129,9 @@ class Expense extends React.Component {
 
 const AddExpense = Form.create()(Expense)
 
-//export default AddExpense
+
 
 const mapStatetToProps = (state) => {
-  console.log('expense state user', state)
   return { 
     error: state.user.error,
     user: state.user.user

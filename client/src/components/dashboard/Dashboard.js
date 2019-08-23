@@ -19,12 +19,12 @@ class Dashboard extends React.Component {
     this.props.actions.userDashboard();
   }
 
-  getUserName() {
-    if (!this.state.user.user === undefined) {
-      console.log("not rendered yet");
-    }
-    console.log("rendered", this.state.user.user.userName);
-  }
+  // getUserName() {
+  //   if (!this.state.user.user === undefined) {
+  //     console.log("not rendered yet");
+  //   }
+  //   console.log("rendered", this.state.user.user.userName);
+  // }
 
   render() {
     return (
@@ -77,7 +77,6 @@ class Dashboard extends React.Component {
 }
 
 const mapStatetToProps = state => {
-  // console.log('monthly at board: ', monthlyAccumExpenses)
   return {
     user: state.user.user,
     monthlyAccumExpenses: state.user.monthAccumulatedExpenses,

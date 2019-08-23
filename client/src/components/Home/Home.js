@@ -44,7 +44,6 @@ class HomeForm extends React.Component {
     e.preventDefault();
     this.props.form.validateFields((err, values) => {
       if (!err) {
-        console.log("Received values of form: ", values);
         this.props.actions.signIn(values);
       }
     });
@@ -127,13 +126,6 @@ class HomeForm extends React.Component {
             <Col span={12}>
               <img src={mainback} alt="my-home-icon" className="home-view" />
             </Col>
-            {/* {this.state.showError === true ? (
-              <Col>
-                <p>{this.props.error}</p>
-              </Col>
-            ) : (
-              ""
-            )} */}
           </Row>
         </div>
         <Footer className="foot" style={{ textAlign: "center" }}>
