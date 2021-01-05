@@ -5,7 +5,7 @@
   "dependencies": {
     "ajv": "6.0.0",
     "antd": "^3.6.5",
-    "axios": "^0.18.0",
+    "axios": "^0.21.1",
     "dotenv": "^8.1.0",
     "immutable": "3.7.4",
     "moment": "^2.22.2",
