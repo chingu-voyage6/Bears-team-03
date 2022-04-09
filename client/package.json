@@ -8,7 +8,7 @@
     "axios": "^0.18.0",
     "dotenv": "^8.1.0",
     "immutable": "3.7.4",
-    "moment": "^2.22.2",
+    "moment": "^2.29.2",
     "prop-types": "^15.6.2",
     "react": "^16.4.1",
     "react-datetime": "^2.14.0",
